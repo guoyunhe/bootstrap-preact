@@ -1,9 +1,7 @@
-import { render, screen } from '@testing-library/preact';
-import { PreactBootstrap } from '.';
+import * as members from '.';
 
-describe('PreactBootstrap', () => {
-  it('render', async () => {
-    render(<PreactBootstrap>foobar</PreactBootstrap>);
-    await screen.findByText('foobar');
+describe('members', () => {
+  it('render', () => {
+    expect(members).toMatchSnapshot();
   });
 });
