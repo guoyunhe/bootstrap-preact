@@ -1,7 +1,10 @@
 import c from 'classnames';
 import { JSX } from 'preact';
 
-export interface ButtonProps extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
+export type ButtonProps = (
+  | (JSX.ButtonHTMLAttributes<HTMLButtonElement> & { component?: 'button' })
+  | (JSX.AnchorHTMLAttributes<HTMLAnchorElement> & { component: 'a' })
+) & {
   variant?:
     | 'primary'
     | 'secondary'
@@ -14,17 +17,26 @@ export interface ButtonProps extends JSX.ButtonHTMLAttributes<HTMLButtonElement>
     | 'link';
   outline?: boolean;
   size?: 'sm' | 'lg';
-}
+};
 
-export default function Button({ variant, outline, size, ...rest }: ButtonProps) {
+export default function Button({
+  component = 'button',
+  variant,
+  outline,
+  size,
+  className,
+  ...rest
+}: ButtonProps) {
+  const Component = component;
   return (
-    <button
+    <Component
       className={c(
         'btn',
         variant && `btn-${outline ? 'outline-' : ''}${variant}`,
         size && `btn-${size}`,
+        className,
       )}
-      {...rest}
+      {...(rest as any)}
     />
   );
 }

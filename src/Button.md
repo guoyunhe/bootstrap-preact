@@ -5,7 +5,7 @@
 ```jsx
 import { Button } from 'bootstrap-preact';
 
-<div style={{ display: 'flex', gap: 8 }}>
+<div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
   <Button variant="primary">Primary</Button>
   <Button variant="secondary">Secondary</Button>
   <Button variant="success">Success</Button>
@@ -23,7 +23,7 @@ import { Button } from 'bootstrap-preact';
 ```jsx
 import { Button } from 'bootstrap-preact';
 
-<div style={{ display: 'flex', gap: 8 }}>
+<div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
   <Button outline variant="primary">
     Primary
   </Button>
@@ -47,6 +47,37 @@ import { Button } from 'bootstrap-preact';
   </Button>
   <Button outline variant="dark">
     Dark
+  </Button>
+</div>;
+```
+
+## Sizes
+
+```jsx
+import { Button } from 'bootstrap-preact';
+
+<div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+  <Button size="sm" variant="primary">
+    Small
+  </Button>
+  <Button variant="primary">Medium</Button>
+  <Button size="lg" variant="primary">
+    Large
+  </Button>
+</div>;
+```
+
+## Tags
+
+```jsx
+import { Button } from 'bootstrap-preact';
+
+<div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+  <Button component="a" variant="primary" href="https://www.github.com/">
+    Link
+  </Button>
+  <Button variant="primary" type="submit">
+    Button
   </Button>
 </div>;
 ```
