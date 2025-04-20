@@ -17,6 +17,7 @@ export type ButtonProps = (
     | 'link';
   outline?: boolean;
   size?: 'sm' | 'lg';
+  disabled?: boolean;
 };
 
 export default function Button({
@@ -25,6 +26,7 @@ export default function Button({
   outline,
   size,
   className,
+  disabled,
   ...rest
 }: ButtonProps) {
   const Component = component;
@@ -34,8 +36,11 @@ export default function Button({
         'btn',
         variant && `btn-${outline ? 'outline-' : ''}${variant}`,
         size && `btn-${size}`,
+        disabled && 'disabled',
         className,
       )}
+      disabled={disabled}
+      aria-disabled={disabled}
       {...(rest as any)}
     />
   );

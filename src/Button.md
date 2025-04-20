@@ -81,3 +81,36 @@ import { Button } from 'bootstrap-preact';
   </Button>
 </div>;
 ```
+
+## Disabled
+
+```jsx
+import { Button } from 'bootstrap-preact';
+
+<div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+  <Button variant="primary" disabled>
+    Primary
+  </Button>
+  <Button variant="secondary" disabled>
+    Secondary
+  </Button>
+  <Button variant="success" disabled>
+    Success
+  </Button>
+  <Button variant="danger" disabled>
+    Danger
+  </Button>
+  <Button variant="primary" outline disabled>
+    Primary
+  </Button>
+  <Button variant="secondary" outline disabled>
+    Secondary
+  </Button>
+  <Button variant="success" outline disabled>
+    Success
+  </Button>
+  <Button variant="danger" outline disabled>
+    Danger
+  </Button>
+</div>;
+```
