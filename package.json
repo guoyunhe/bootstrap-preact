@@ -1,5 +1,6 @@
 {
   "name": "preact-bootstrap",
+  "version": "0.0.1",
   "homepage": "https://github.com/guoyunhe/preact-bootstrap#readme",
   "bugs": {
     "url": "https://github.com/guoyunhe/preact-bootstrap/issues"
@@ -84,6 +85,5 @@
     "doc": {
       "basename": "/preact-bootstrap/"
     }
-  },
-  "version": "0.0.1"
+  }
 }
