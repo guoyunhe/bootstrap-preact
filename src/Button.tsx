@@ -12,11 +12,19 @@ export interface ButtonProps extends JSX.ButtonHTMLAttributes<HTMLButtonElement>
     | 'light'
     | 'dark'
     | 'link';
+  outline?: boolean;
   size?: 'sm' | 'lg';
 }
 
-export default function Button({ variant, size, ...rest }: ButtonProps) {
+export default function Button({ variant, outline, size, ...rest }: ButtonProps) {
   return (
-    <button className={c('btn', variant && `btn-${variant}`, size && `btn-${size}`)} {...rest} />
+    <button
+      className={c(
+        'btn',
+        variant && `btn-${outline ? 'outline-' : ''}${variant}`,
+        size && `btn-${size}`,
+      )}
+      {...rest}
+    />
   );
 }
