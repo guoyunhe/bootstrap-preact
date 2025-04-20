@@ -119,10 +119,12 @@ import { Button } from 'bootstrap-preact';
 
 ```jsx
 import { Button } from 'bootstrap-preact';
+import { useState } from 'preact/hooks';
 
 function App() {
-  const [active1, setActive1] = React.useState(false);
-  const [active2, setActive2] = React.useState(false);
+  const [active1, setActive1] = useState(false);
+  const [active2, setActive2] = useState(false);
+
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
       <Button variant="primary" active={active1} onClick={() => setActive1((prev) => !prev)}>

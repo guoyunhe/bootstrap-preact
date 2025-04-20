@@ -3,5 +3,6 @@
 exports[`members > render 1`] = `
 {
   "Button": [Function],
+  "Collapse": [Function],
 }
 `;
