@@ -84,5 +84,6 @@
     "doc": {
       "basename": "/preact-bootstrap/"
     }
-  }
+  },
+  "version": "0.0.1"
 }
