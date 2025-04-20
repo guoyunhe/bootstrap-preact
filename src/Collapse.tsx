@@ -11,32 +11,16 @@ export interface CollapseProps extends JSX.HTMLAttributes<HTMLDivElement> {
    * Collapse in horizontal direcation
    */
   horizontal?: boolean;
-  /**
-   * Transition duration in milliseconds, should be same as Sass variables
-   * @default 350
-   * @see https://getbootstrap.com/docs/5.3/components/collapse/#sass-variables
-   */
-  duration?: number;
 }
 
-export default function Collapse({
-  className,
-  show,
-  horizontal,
-  duration = 350,
-  ...rest
-}: CollapseProps) {
+export default function Collapse({ className, show, horizontal, ...rest }: CollapseProps) {
   const rootRef = useRef<HTMLDivElement>(null);
 
   const [internalShow, setInternalShow] = useState(show);
   const [collapsing, setCollapsing] = useState(false);
-  const timeoutRef = useRef(0);
 
   useEffect(() => {
     if (internalShow !== show) {
-      // clear unfinished collapsing
-      window.clearTimeout(timeoutRef.current);
-
       setInternalShow(show);
       setCollapsing(true);
 
@@ -46,12 +30,8 @@ export default function Collapse({
       } else {
         rootRef.current.style.height = show ? `0px` : `${rootRef.current.scrollHeight}px`;
       }
-
-      timeoutRef.current = window.setTimeout(() => {
-        setCollapsing(false);
-      }, duration);
     }
-  }, [duration, horizontal, internalShow, show]);
+  }, [horizontal, internalShow, show]);
 
   useEffect(() => {
     if (collapsing) {
@@ -77,6 +57,9 @@ export default function Collapse({
         horizontal && 'collapse-horizontal',
         className,
       )}
+      onTransitionEnd={() => {
+        setCollapsing(false);
+      }}
       {...rest}
     />
   );
