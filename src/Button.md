@@ -114,3 +114,31 @@ import { Button } from 'bootstrap-preact';
   </Button>
 </div>;
 ```
+
+## Toogle
+
+```jsx
+import { Button } from 'bootstrap-preact';
+
+function App() {
+  const [active1, setActive1] = React.useState(false);
+  const [active2, setActive2] = React.useState(false);
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+      <Button variant="primary" active={active1} onClick={() => setActive1((prev) => !prev)}>
+        Toogle
+      </Button>
+      <Button
+        variant="primary"
+        outline
+        active={active2}
+        onClick={() => setActive2((prev) => !prev)}
+      >
+        Toggle
+      </Button>
+    </div>
+  );
+}
+
+render(<App />);
+```

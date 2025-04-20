@@ -18,6 +18,7 @@ export type ButtonProps = (
   outline?: boolean;
   size?: 'sm' | 'lg';
   disabled?: boolean;
+  active?: boolean;
 };
 
 export default function Button({
@@ -27,20 +28,25 @@ export default function Button({
   size,
   className,
   disabled,
+  active,
   ...rest
 }: ButtonProps) {
   const Component = component;
+
   return (
     <Component
       className={c(
         'btn',
         variant && `btn-${outline ? 'outline-' : ''}${variant}`,
         size && `btn-${size}`,
+        active && 'active',
         disabled && 'disabled',
         className,
       )}
       disabled={disabled}
       aria-disabled={disabled}
+      aria-pressed={active}
+      role="button"
       {...(rest as any)}
     />
   );
