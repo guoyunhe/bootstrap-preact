@@ -2,6 +2,7 @@
 
 exports[`members > render 1`] = `
 {
+  "Accordion": [Function],
   "Button": [Function],
   "Collapse": [Function],
 }

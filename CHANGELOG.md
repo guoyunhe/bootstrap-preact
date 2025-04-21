@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0 - 2025-04-21
+
+- Added `Accordion` component
+
 ## 0.2.0 - 2025-04-21
 
 - Added `Collapse` component
