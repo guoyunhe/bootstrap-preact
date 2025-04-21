@@ -1,9 +1,10 @@
 import c from 'classnames';
-import { JSX } from 'preact';
+import { ComponentType, JSX } from 'preact';
 
-export type ButtonProps = (
+export type ButtonProps<P> = (
   | (JSX.ButtonHTMLAttributes<HTMLButtonElement> & { component?: 'button' })
   | (JSX.AnchorHTMLAttributes<HTMLAnchorElement> & { component: 'a' })
+  | (P & { component: ComponentType<P> })
 ) & {
   variant?:
     | 'primary'
@@ -21,7 +22,7 @@ export type ButtonProps = (
   active?: boolean;
 };
 
-export default function Button({
+export default function Button<P extends { className: string }>({
   component = 'button',
   variant,
   outline,
@@ -30,7 +31,7 @@ export default function Button({
   disabled,
   active,
   ...rest
-}: ButtonProps) {
+}: ButtonProps<P>) {
   const Component = component;
 
   return (

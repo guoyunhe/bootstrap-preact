@@ -79,7 +79,8 @@
     "stylelint-config-ali": "^2.1.2",
     "stylelint-prettier": "^5.0.3",
     "typescript": "^5.8.3",
-    "vitest": "^3.1.1"
+    "vitest": "^3.1.1",
+    "wouter-preact": "^3.7.0"
   },
   "peerDependencies": {
     "preact": "^10.0.0"

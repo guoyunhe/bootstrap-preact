@@ -144,3 +144,16 @@ function App() {
 
 render(<App />);
 ```
+
+## Wouter
+
+[wouter-preact](https://github.com/molefrog/wouter/) is a 2KB routing library for Preact.
+
+```jsx
+import { Button } from 'bootstrap-preact';
+import { Link } from 'wouter-preact';
+
+<Button variant="primary" component={Link} href="../collapse">
+  Wouter Link
+</Button>;
+```
