@@ -1,10 +1,3 @@
-export type ResponsiveValue<T> =
-  | T
-  | {
-      xs?: T;
-      sm?: T;
-      md?: T;
-      lg?: T;
-      xl?: T;
-      xxl?: T;
-    };
+export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+
+export type ResponsiveValue<T> = T | Record<Breakpoint, T>;

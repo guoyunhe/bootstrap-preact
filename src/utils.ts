@@ -7,7 +7,7 @@ export function rc(prefix: string, value?: ResponsiveValue<string | number>) {
     return prefix + value;
   } else {
     return Object.entries(value)
-      .map(([key, val]) => `${prefix + key}-${val}`)
+      .map(([key, val]) => (key === 'xs' ? prefix + val : `${prefix + key}-${val}`))
       .join(' ');
   }
 }

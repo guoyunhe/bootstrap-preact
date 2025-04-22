@@ -1,8 +1,9 @@
 import c from 'classnames';
 import { JSX } from 'preact';
+import { Breakpoint } from './types';
 
 export interface ContainerProps extends JSX.HTMLAttributes<HTMLDivElement> {
-  breakpoint?: 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+  breakpoint?: Breakpoint;
   fluid?: boolean;
 }
 
