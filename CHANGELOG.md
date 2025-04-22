@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0 - 2025-04-22
+
+- Added `Container` component
+
 ## 0.3.0 - 2025-04-21
 
 - Added `Accordion` component
