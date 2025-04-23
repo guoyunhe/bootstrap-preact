@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.0 - 2025-04-23
+
+- Added `Box` component
+- Added `Col` component
+- Added `Row` component
+
 ## 0.4.0 - 2025-04-22
 
 - Added `Container` component

@@ -1,9 +1,9 @@
 import c from 'classnames';
-import { JSX } from 'preact';
+import Box, { BoxProps } from './Box';
 import { ResponsiveValue } from './types';
 import { rc } from './utils';
 
-export interface RowProps extends JSX.HTMLAttributes<HTMLDivElement> {
+export interface RowProps extends BoxProps {
   g?: ResponsiveValue<number>;
   gx?: ResponsiveValue<number>;
   gy?: ResponsiveValue<number>;
@@ -12,7 +12,7 @@ export interface RowProps extends JSX.HTMLAttributes<HTMLDivElement> {
 
 export default function Row({ className, cols, g, gx, gy, ...rest }: RowProps) {
   return (
-    <div
+    <Box
       className={c(
         'row',
         cols && `row-cols-${cols}`,
